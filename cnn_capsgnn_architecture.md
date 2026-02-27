@@ -1,4 +1,4 @@
-# CNN + CapsGNN Architecture (Compact)
+# CNN + CapsGNN Architecture
 
 ```mermaid
 flowchart TD
@@ -6,9 +6,10 @@ flowchart TD
     B[Preprocessing<br/>Resize + Normalize + Augment]
     C[CNN Backbone<br/>ResNet18]
     D[Primary Capsules<br/>Feature to Capsule Tokens]
-    E[Capsule Graph + GNN<br/>k-NN + 2 GraphConv]
-    F[Readout + Classifier<br/>Mean Pool + FC]
-    G[Output<br/>8 GI Classes]
+    E[Learnable Edge-Gated Capsule Graph<br/>k-NN + Edge Gate MLP]
+    F[GNN Reasoning<br/>2 GraphConv Layers]
+    G[Readout + Classifier<br/>Mean Pool + FC]
+    H[Output<br/>8 GI Classes]
 
-    A --> B --> C --> D --> E --> F --> G
+    A --> B --> C --> D --> E --> F --> G --> H
 ```
